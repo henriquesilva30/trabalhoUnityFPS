@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
 {
     public float health = 5.0f;
     public int pointValue;
-    public HealthBar healthBar;
+    // public HealthBar healthBar;
 
     public ParticleSystem DestroyedEffect;
 
@@ -28,7 +28,7 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        healthBar.setMaxHealth(health);
+        // healthBar.setMaxHealth(health);
         if(DestroyedEffect)
             PoolSystem.Instance.InitPool(DestroyedEffect, 16);
         
@@ -40,7 +40,7 @@ public class Target : MonoBehaviour
     public void Got(float damage)
     {
         m_CurrentHealth -= damage;
-        healthBar.setHealth(m_CurrentHealth);
+        // healthBar.setHealth(m_CurrentHealth);
         
         if(HitPlayer != null)
             HitPlayer.PlayRandom();
